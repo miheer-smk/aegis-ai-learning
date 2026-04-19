@@ -320,7 +320,15 @@ emotion_state       — per-student: concern, curiosity, confidence (EMA)
 
 ## Getting Started
 
-**Prerequisites:** Node.js 18+, Anthropic API key
+### Prerequisites
+
+- **Node.js 18+**
+- **Anthropic API key** ([console.anthropic.com](https://console.anthropic.com/))
+  - You'll need to add **$5 minimum credit** to your Anthropic account to use `claude-opus-4-5`
+  - A full demo session (~50 messages, including cognitive pipeline overhead) costs roughly **$0.50–$1.50**
+  - Free trial credit is not sufficient — the model used (`claude-opus-4-5`) requires paid tier
+
+> 💡 **Tip:** If you want to try AEGIS without paying, swap `claude-opus-4-5` → `claude-haiku-4-5` in `src/lib/prompts.ts` and `src/lib/epistemic.ts`. Haiku is ~10× cheaper and free-tier friendly, though the cognitive reasoning quality drops noticeably.
 
 ```bash
 git clone https://github.com/miheer-smk/aegis-ai-learning.git
@@ -335,7 +343,7 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+
 
 ### Demo Flow
 
